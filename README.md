@@ -17,3 +17,8 @@ The entire project will be completed for a period of 4 months and below are the 
 * An API that provides a communication interface between the front-end and your data (retrieve, create, delete, update them)
 
 ## Description of the CommandLine Interpreter
+
+
+## AUTRHORS
+``` Hope Lekan Davids
+```

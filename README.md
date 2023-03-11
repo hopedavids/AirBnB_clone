@@ -20,5 +20,4 @@ The entire project will be completed for a period of 4 months and below are the 
 
 
 ## AUTRHORS
-``` Hope Lekan Davids
-```
+> Hope Lekan Davids

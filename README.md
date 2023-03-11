@@ -18,6 +18,33 @@ The entire project will be completed for a period of 4 months and below are the 
 
 ## Description of the CommandLine Interpreter
 
+The command-line interpreter is built with the help of the python cmd module. It allows the engineer to have backdoor access to the system for command execution. Below is how to go about with the command-line interpreter:
+
+1. Clone the repository using `git clone https://github.com/hopedavids/AirBnB_clone` and cd into the repository.
+
+2. Run the console.py file `./console.py`
+
+3. You will get the command-line output as this:
+```
+▶./console.py
+
+Backend Interactive Console. Type help or ? to list commands
+(hbnb) 
+```
+
+4. To find out more information about the console, type `? or help`
+```
+(hbnb) ?
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+
+(hbnb) 
+
+```
+5. Type `quit` to exit the console.
+
 
 ## AUTRHORS
 > Hope Lekan Davids

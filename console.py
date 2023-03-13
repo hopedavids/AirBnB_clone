@@ -4,7 +4,7 @@ import sys
 import cmd
 
 
-class BackendShell(cmd.Cmd):
+class HBNBCommand(cmd.Cmd):
     """This is a the backend interactive shell interface"""
     intro = "<<Backend Interactive Console. Type help or ? to list commands>>"
     prompt = "(hbnb) "
@@ -22,4 +22,4 @@ class BackendShell(cmd.Cmd):
 
 
 if __name__ == '__main__':
-    BackendShell().cmdloop()
+    HBNBCommand().cmdloop()

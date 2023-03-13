@@ -2,8 +2,7 @@
 
 import unittest
 import sys
-sys.path.append('../')
-from console import BackendShell
+from ..console import BackendShell
 
 
 class TestConsole(unittest.TestCase):

@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 import sys
-sys.path.append('../')
-from models.base_model import BaseModel
+from ..models.base_model import BaseModel
 
 my_model = BaseModel()
 my_model.name = "My First Model"

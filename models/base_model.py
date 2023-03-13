@@ -5,20 +5,34 @@ from datetime import datetime
 
 
 class BaseModel:
+    '''This is the base model class object for all attributes
+        will be used by the airbnb application
+    '''
+
     def __init__(self, **kwargs):
+        # The initializer method for the BaseModel class
         self.id = str(uuid.uuid4())
         self.created_at = datetime.now().isoformat()
         self.updated_at = datetime.now().isoformat()
         self.__dict__.update(kwargs)
 
     def __str__(self):
+        ''' The __str__ method for the BaseModel class which
+        turn to translate the the attribute name into a string
+        '''
         class_name = type(self).__name__
         return f"[{class_name}]{self.id}={self.created_at}]"
 
     def save(self):
+        '''The save method for the BaseModel class which determines
+        if the object needs to be saved or not
+        '''
         self.updated_at = datetime.now().isoformat()
 
     def to_dict(self):
+        ''' The to_dict method that converts the attributes to
+        a dictionary
+        '''
         obj_dict = self.__dict__
         obj_dict['__class__'] = self.__class__.__name__
         obj_dict['created_at'] = self.created_at

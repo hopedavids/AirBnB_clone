@@ -48,3 +48,4 @@ EOF  help  quit
 
 ## AUTRHORS
 > Hope Lekan Davids
+Bernard Bapanaye

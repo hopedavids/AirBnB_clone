@@ -16,7 +16,8 @@ class HBNBCommand(cmd.Cmd):
 	This class contains method to operate the HBNB command console
 	"""
 	model_list = {'BaseModel': BaseModel}
-	prompt = '(hbnb)'
+	intro = ">>> Welcome to HBNB console. Type ? or help >>>"
+	prompt = '(hbnb) '
 	
 	def do_quit(self, arg):
 		"""Quit command to exit the program"""
@@ -97,20 +98,54 @@ class HBNBCommand(cmd.Cmd):
 		
 		if (arg not in HBNBCommand.model_list):
 			print(" ** class doesn\'t exist ** ")
+
+		elif arg is None or len(arg) == 0: 
+			for key, value in obj_dict.items():
+				obj_list.append(str(value))
+				print(obj_list)
 		else:
 			for key, value in obj_dict.items():
 				obj_list.append(str(value))
 				print(obj_list)
-		#else:
-			#print("** class doesn't exist **")
-	
-			
-	
-	
-	
-	
-	
-			
-		
+
+	def do_update(self, args):
+		"""
+        Updates an instance based on the class name and id 
+        (save the change into the JSON file). 
+        Ex: $ update BaseModel 1234-1234-1234.
+        """
+		arg = args.split()
+		class_name = arg[0]
+		if (args is None or len(arg) == 0):
+			print("** class name missing **")
+
+		elif (arg[0] not in HBNBCommand.model_list):
+			print(" ** class doesn\'t exist ** ")
+
+		elif (len(arg) < 2):
+			print("** instance id missing **")
+
+		else:
+			obj_dict = models.storage.all()
+			key = f'{arg[0]}.{arg[1]}'
+			if key not in obj_dict:
+				print("** no instance found **")
+
+			elif arg[2] is None or (len(arg) < 3):
+				print("** attribute name missing **")
+
+			elif arg[3] is None or len(arg) < 4:
+				print("** value missing **")
+
+			else:
+				obj = obj_dict[key]
+				attr_name = arg[2]
+				attr_value = arg[3]
+				if attr_name in obj.__dict__:
+					setattr(obj, attr_name, attr_value)
+					models.storage.save()
+
+
+
 if __name__ == '__main__':
 	HBNBCommand().cmdloop()		

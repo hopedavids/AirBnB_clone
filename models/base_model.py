@@ -2,6 +2,8 @@
 
 import uuid
 from datetime import datetime
+import sys
+from engine.file_storage import FileStorage
 
 
 class BaseModel:
@@ -22,6 +24,8 @@ class BaseModel:
             self.created_at = datetime.now().isoformat()
             self.updated_at = datetime.now().isoformat()
             self.__dict__.update(kwargs)
+            models.storage.new(self)
+
 
     def __str__(self):
         ''' The __str__ method for the BaseModel class which
@@ -35,6 +39,7 @@ class BaseModel:
         if the object needs to be saved or not
         '''
         self.updated_at = datetime.now().isoformat()
+        models.storage.save()
 
     def to_dict(self):
         ''' The to_dict method that converts the attributes to

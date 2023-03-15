@@ -114,15 +114,17 @@ class HBNBCommand(cmd.Cmd):
 
 		if (arg not in HBNBCommand.model_list):
 			print(" ** class doesn\'t exist ** ")
-
+	
 		elif arg is None or len(arg) == 0:
 			for key, value in obj_dict.items():
 				obj_list.append(str(value))
 				print(obj_list)
+
 		else:
 			for key, value in obj_dict.items():
 				obj_list.append(str(value))
 				print(obj_list)
+
 
 	def do_update(self, args):
 		"""

@@ -11,6 +11,7 @@ from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
 import models
 
+
 class HBNBCommand(cmd.Cmd):
 	"""
 	This class contains method to operate the HBNB command console
@@ -18,19 +19,19 @@ class HBNBCommand(cmd.Cmd):
 	model_list = {'BaseModel': BaseModel}
 	intro = ">>> Welcome to HBNB console. Type ? or help >>>"
 	prompt = '(hbnb) '
-	
+
 	def do_quit(self, arg):
 		"""Quit command to exit the program"""
 		return True
-	
+
 	def do_EOF(self, arg):
 		"""Exits the program"""
 		return True
-	
+
 	def do_create(self, arg):
 		"""
 		Creates a new instance of BaseModel, saves it (to 
-		the JSON 
+		the JSON
 		file) and prints the id. Ex: $ create BaseModel
 		"""
 		if (arg is None or len(arg) == 0):
@@ -41,11 +42,11 @@ class HBNBCommand(cmd.Cmd):
 			new_base = models.base_model.BaseModel()
 			new_base.save()
 			print(new_base.id)
-	
+
 	def do_show(self, line):
 		"""
-		Prints the string representation of an instance 
-		based on  
+		Prints the string representation of an instance
+		based on
 		the class name and id
 		Ex: $ show BaseModel 1234-1234-1234.
 		"""
@@ -63,11 +64,11 @@ class HBNBCommand(cmd.Cmd):
 				print(obj_dict[key])
 			else:
 				print("** no instance found **")
-				
+
 	def do_destroy(self, line):
 		"""
-		Deletes an instance based on the class name and id 
-		(save the change into the JSON file). 
+		Deletes an instance based on the class name and id
+		(save the change into the JSON file).
 		Ex: $ destroy BaseModel 1234-1234-1234.
 		"""
 		arg = line.split()
@@ -85,21 +86,21 @@ class HBNBCommand(cmd.Cmd):
 				models.storage.save()
 			else:
 				print("** no instance found **")
-	
+
 	def do_all(self, arg):
 		"""
-		Prints all string representation of all instances 
-		based or not on the class name. 
+		Prints all string representation of all instances
+		based or not on the class name.
 		Ex: $ all BaseModel or $ all.
 		"""
-		
+
 		obj_list = []
 		obj_dict = models.storage.all()
-		
+
 		if (arg not in HBNBCommand.model_list):
 			print(" ** class doesn\'t exist ** ")
 
-		elif arg is None or len(arg) == 0: 
+		elif arg is None or len(arg) == 0:
 			for key, value in obj_dict.items():
 				obj_list.append(str(value))
 				print(obj_list)
@@ -110,10 +111,10 @@ class HBNBCommand(cmd.Cmd):
 
 	def do_update(self, args):
 		"""
-        Updates an instance based on the class name and id 
-        (save the change into the JSON file). 
+        Updates an instance based on the class name and id
+        (save the change into the JSON file).
         Ex: $ update BaseModel 1234-1234-1234.
-        """
+		"""
 		arg = args.split()
 		class_name = arg[0]
 		if (args is None or len(arg) == 0):
@@ -146,6 +147,5 @@ class HBNBCommand(cmd.Cmd):
 					models.storage.save()
 
 
-
 if __name__ == '__main__':
-	HBNBCommand().cmdloop()		
+	HBNBCommand().cmdloop()

@@ -8,6 +8,7 @@ import json
 import os
 from models.base_model import BaseModel
 from models.user import User
+from models.state import State
 
 
 
@@ -40,7 +41,7 @@ class FileStorage:
 	__objects = {}
 
 
-class FileStorage():
+class FileStorage:
 	"""This class contains method to serialize and deserialize
 	instances of BaseModel
 	"""

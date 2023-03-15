@@ -11,6 +11,8 @@ from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
 from models.user import User
 from models.state import State
+from models.city import City
+from models.amenity import Amenity
 import models
 
 
@@ -22,8 +24,10 @@ class HBNBCommand(cmd.Cmd):
 		"BaseModel": BaseModel,
 		"User": User,
 		"State": State,
-		"City": City
+		"City": City,
+		"Amenity": Amenity
 		}
+
 	intro = ">>> Welcome to HBNB console. Type ? or help >>>"
 	prompt = '(hbnb) '
 

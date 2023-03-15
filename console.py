@@ -21,7 +21,8 @@ class HBNBCommand(cmd.Cmd):
 	model_list = {
 		"BaseModel": BaseModel,
 		"User": User,
-		"State": State
+		"State": State,
+		"City": City
 		}
 	intro = ">>> Welcome to HBNB console. Type ? or help >>>"
 	prompt = '(hbnb) '

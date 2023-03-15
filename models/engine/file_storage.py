@@ -7,6 +7,7 @@ BaseModel class instances
 import json
 import os
 from models.base_model import BaseModel
+from models.user import User
 
 
 

@@ -13,6 +13,7 @@ from models.user import User
 from models.state import State
 from models.city import City
 from models.amenity import Amenity
+from models.place import Place
 import models
 
 
@@ -25,7 +26,8 @@ class HBNBCommand(cmd.Cmd):
 		"User": User,
 		"State": State,
 		"City": City,
-		"Amenity": Amenity
+		"Amenity": Amenity,
+		"Place": Place
 		}
 
 	intro = ">>> Welcome to HBNB console. Type ? or help >>>"

@@ -28,7 +28,8 @@ class HBNBCommand(cmd.Cmd):
 		"State": State,
 		"City": City,
 		"Amenity": Amenity,
-		"Place": Place
+		"Place": Place,
+		"Review": Review
 		}
 
 	intro = ">>> Welcome to HBNB console. Type ? or help >>>"

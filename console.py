@@ -9,6 +9,7 @@ import cmd, sys
 import json
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
+from models.user import User
 import models
 
 
@@ -16,7 +17,10 @@ class HBNBCommand(cmd.Cmd):
 	"""
 	This class contains method to operate the HBNB command console
 	"""
-	model_list = {'BaseModel': BaseModel}
+	model_list = {
+		"BaseModel": BaseModel,
+		"User": User
+		}
 	intro = ">>> Welcome to HBNB console. Type ? or help >>>"
 	prompt = '(hbnb) '
 

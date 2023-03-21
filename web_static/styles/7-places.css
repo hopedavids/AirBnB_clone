@@ -1,28 +1,27 @@
-.places {
-    margin-top: 30px;
-    display: flex;
-    /* box-sizing: border-box; */
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    /* border: #FF5A5F 2px solid; */
+.container .places{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
-.places h1, .places h2 {
-    font-size: 30px;
+.container .places h1{
+	width:100%;
+	font-size: 30px;
 }
 
-.places h1 {
-    width: 100%;
+.container .places article{
+	width: 390px;
+	padding: 20px;
+	margin: 20px;
+	border: 1px solid #FF5A5F;
+	border-radius: 4px;
+	display:flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
 }
 
-.places article {
-    width: 390px;
-    min-width: 390px;
-    margin: 20px;
-    padding: 20px;
-    border: #FF5A5F 1px solid;
-    border-radius: 4px;
-    text-align: center;
-    /* flex: 1 2 auto; */
+.container .places article h2{
+	font-size: 30px;
 }
